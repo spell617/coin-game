@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>coin-game</title>
+    <script src="./app.js"></script>
+    <!-- <script>
+    function doNotReload(){
+        if(    (event.ctrlKey == true && (event.keyCode == 78 || event.keyCode == 82))
+            || (event.keyCode == 116) )
+        {
+          event.keyCode = 0;
+          event.cancelBubble = true;
+          event.returnValue = false;
+     alert("새로고침 방지");
+        }
+    }
+    document.onkeydown = doNotReload;
+    </script> -->
+</head>
+<body>
+    <style>
+        body{
+            background-image: url("./bitcoin-g8cfc2f368_1920.jpg");
+        }.title{
+            color: aliceblue;
+            font-size: 40px;
+        }.tt{
+            width: 500px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: xx-large;
+        }
+    </style>
+    <center><h1 class = "title">coin-game</h1></center>
+    <form>
+        <center>
+        <button onclick="wallet();return false;">보유 코인</button>
+        <button onclick="M();return false;">보유 잔고</button>
+        <dir id="bit" class = "tt">bitcoin</dir>
+        <button onclick="sellAndBuy(1);return false;">사기</button><button onclick="sellAndBuy(2);return false;">팔기</button>
+        <dir id="ether" class = "tt">etherium</dir>
+        <button onclick="sellAndBuy(3);return false;">사기</button><button onclick="sellAndBuy(4);return false;">팔기</button>
+        <dir id="doge"  class = "tt">doge</dir>
+        <button onclick="sellAndBuy(5);return false;">사기</button><button onclick="sellAndBuy(6);return false;">팔기</button>
+        </center>
+    </form>
+</body>
+</html>
