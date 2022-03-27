@@ -18,7 +18,7 @@ let MM = 0;
 function getRandomIntInclusive(){
     min = Math.ceil(min);
     max = Math.floor(max);
-    re = Math.floor(Math.random() * (max - min + 1)) + min; //최댓값도 ?��?��, 최솟값도 ?��?��
+    re = Math.floor(Math.random() * (max - min + 1)) + min; //理쒕뙎媛믩룄 ?占쏙옙?占쏙옙, 理쒖넖媛믩룄 ?占쏙옙?占쏙옙
     while(true){
         if(i === 0){
             bitcoin = bitcoin+bitcoin*(re/100);
@@ -40,68 +40,68 @@ function sellAndBuy(item){
         if(W>=bitcoin){
             W = W - bitcoin
             B = B + 1
-            alert("Bitecoin : "+B)
+            console.log("Bitecoin : "+B)
         }
         else if(W<bitcoin){
-            alert("no,money")
+            console.log("no,money")
         }
     }
     else if(item==2){
         if(B<=0){
-            alert("no,bitcoin")
+            console.log("no,bitcoin")
         }
         else if(B>=1){
             B = B - 1
             W = W + bitcoin
-            alert("bitcoin : "+B)
+            console.log("bitcoin : "+B)
         }
     }
     else if(item==3){
         if(W>=etherium){
             W = W - etherium
             E = E + 1
-            alert("Etherium : "+E)
+            console.log("Etherium : "+E)
         }
         else if(W<=etherium){
-            alert("No,money")
+            console.log("No,money")
         }
     }
     else if(item==4){
         if(E<=0){
-            alert("no,etherium")
+            console.log("no,etherium")
         }
         else if(E>=1){
             W = W + etherium
             E = E - 1
-            alert("etherium : "+E)
+            console.log("etherium : "+E)
         }
     }
     else if(item==5){
         if(W>=doge){
             W = W - doge
             D = D + 1
-            alert("Doge : "+D)
+            console.log("Doge : "+D)
         }
         else if(W<=doge){
-            alert("no,money")
+            console.log("no,money")
         }
     }
     else if(item==6){
         if(D<=0){
-            alert("no,doge");
+            console.log("no,doge");
         }
         else if(D>=1){
             W = W + doge
             D = D - 1
-            alert("doge : "+D)
+            console.log("doge : "+D)
         }
     }
 }
 function wallet(){
-    alert("bitcoin : "+B+"   etherium : "+E+"   doge : "+D)
+    console.log("bitcoin : "+B+"   etherium : "+E+"   doge : "+D)
 }
 function M(){
-    alert("?���? : "+W)
+    console.log("잔고: "+W)
 }
 function sleep(ms){
     return new Promise((resolve, reject) => {
@@ -113,33 +113,41 @@ function sleep(ms){
 async function timer(){
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
     await sleep(30000)
     getRandomIntInclusive()
-    console.log("기격변동...")
+    console.log("가격변동...")
+}
+function price(){
+    console.log("비트코인은 : ")
+    console.log(bitcoin)
+    console.log("이더리움은 : ")
+    console.log(etherium)
+    console.log("도지코인은 : ")
+    console.log(doge)
 }
 timer()

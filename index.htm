@@ -12,11 +12,14 @@
           event.keyCode = 0;
           event.cancelBubble = true;
           event.returnValue = false;
-     alert("새로고침 방지");
+     alert("reload stop!!!");
         }
     }
     document.onkeydown = doNotReload;
     </script> -->
+    <script>
+        alert("게임을 하실때는 f12를 누른상태로 해주시길 바랍니다.")
+    </script>
 </head>
 <body>
     <style>
@@ -35,9 +38,10 @@
     <center><h1 class = "title">coin-game</h1></center>
     <form>
         <center>
-        <button onclick="wallet();return false;">보유 코인</button>
-        <button onclick="M();return false;">보유 잔고</button>
-        <dir id="bit" class = "tt">bitcoin</dir>
+            <button onclick="price();return false;">현제 가격</button>
+        <button onclick="wallet();return false;">보유코인</button>
+        <button onclick="M();return false;">잔고</button>
+        <dir id="bit" class = "tt"">bitcoin</dir>
         <button onclick="sellAndBuy(1);return false;">사기</button><button onclick="sellAndBuy(2);return false;">팔기</button>
         <dir id="ether" class = "tt">etherium</dir>
         <button onclick="sellAndBuy(3);return false;">사기</button><button onclick="sellAndBuy(4);return false;">팔기</button>
