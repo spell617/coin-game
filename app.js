@@ -4,8 +4,8 @@ let doge = 200;
 let reple = 1000;
 let lic = 50000;
 var i = 0;
-let min = -60;
-let max = 60;
+let min = -99;
+let max = 99;
 let re;
 let n;
 let B = 0;
@@ -15,25 +15,30 @@ let R = 0;
 let L = 0;
 let W = 100000000;
 let MM = 0;
-function getRandomIntInclusive(){
+let kkk = 0;
+function bitcoinPricdChange(){
     min = Math.ceil(min);
     max = Math.floor(max);
-    re = Math.floor(Math.random() * (max - min + 1)) + min; //理쒕뙎媛믩룄 ?占쏙옙?占쏙옙, 理쒖넖媛믩룄 ?占쏙옙?占쏙옙
-    while(true){
-        if(i === 0){
-            bitcoin = bitcoin+bitcoin*(re/100);
-        }
-        else if(i === 1){
-            etherium = etherium+etherium*(re/100);
-        }
-        else if(i === 2){
-            doge = doge+doge*(re/100);
-        }
-        else if(i == 3){
-            return 0;
-        }
-        i = i + 1;
-    }
+    re = Math.floor(Math.random() * (max - min + 1)) + min;
+    bitcoin = bitcoin+bitcoin*(re/100);
+}
+function etheriumPriceChage(){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    re = Math.floor(Math.random() * (max - min + 1)) + min;
+    etherium = etherium+etherium*(re/100);
+}
+function dogePriceChage(){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    re = Math.floor(Math.random() * (max - min + 1)) + min;
+    doge = doge+doge*(re/100);
+}
+function allCoinPriceChange(){
+    bitcoinPricdChange()
+    etheriumPriceChage()
+    dogePriceChage()
+    console.log("가격변동....")
 }
 function sellAndBuy(item){
     if(item==1){
@@ -111,36 +116,26 @@ function sleep(ms){
     })
 }
 async function timer(){
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
-    await sleep(30000)
-    getRandomIntInclusive()
-    console.log("가격변동...")
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
+        await sleep(30000)
+        allCoinPriceChange()
 }
 function price(){
     console.log("비트코인은 : ")
@@ -151,3 +146,12 @@ function price(){
     console.log(doge)
 }
 timer()
+if(M == 100000000){
+    console.log("가진돈이 그대로 입니다. ")
+}
+else if(M > 100000000){
+    console.log("you win!!")
+}
+else if(M < 100000000){
+    console.log("you lose!!")
+}
